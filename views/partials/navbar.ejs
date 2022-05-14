@@ -1,0 +1,80 @@
+<nav class="nav-info">
+    <div class="container d-flex">
+        <h2 class="logo" onclick="location.assign('/')">hosting<span>flex</span></h2>
+        <ul class="contact-info">
+            <li>+24998933839</li>
+            <li>info@hostingflex.com</li>
+        </ul>
+        <% if(user) { %>
+            <h5 class="text-light">
+                wellcome <%= user.firstname %>
+                    <%= user.lastname %>
+            </h5>
+            <% } else { %>
+                <ul>
+                    <li><a href="/login">
+                            <i class="bx bx-log-in"></i>login</a>
+                    </li>
+                    <li><a href="/signup"><i class="bx bx-user-plus"></i>registration</a></li>
+                </ul>
+         <% } %>
+    </div>
+</nav>
+<nav class="nav-links sticky-top">
+    <div class="container">
+        <ul class="d-flex">
+            <li class="link-menu">
+                <i class="bx bx-menu"></i>
+            </li>
+            <li class="link-items">
+                <ul class="d-flex">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Hosting
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a href="/hosting" class="dropdown-item">Shared Hosting</a></li>
+                            <li><a href="/hosting" class="dropdown-item">Dedicated Hosting</a></li>
+                            <li><a href="/hosting" class="dropdown-item">Reseller Hosting</a></li>
+                            <li><a href="/hosting" class="dropdown-item">VPS Hosting</a></li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <button class="dropdown-toggle" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Blog
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a href="/blog" class="dropdown-item">Blog/a></li>
+                            <li><a href="/blog/details" class="dropdown-item">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </li>
+            <li>
+                <ul class="d-flex">
+                    <li class="cart"><a href="/cart">
+                            <span class="cart-count">
+                                0
+                            </span>
+                            <i class="bx bx-cart"></i>
+                        </a></li>
+                    <li>
+                        <form action="/search" class="search d-flex" method="post">
+                            <input type="search" name="" id="" placeholder="Search">
+                            <button type="submit"><i class="bx bx-search"></i></button>
+                        </form>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="hosting-menu">
+
+        </div>
+    </div>
+</nav>

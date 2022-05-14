@@ -1,0 +1,35 @@
+{
+  "name": "hostingflex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ZuhairAhmed0/hostingflex.git"
+  },
+  "author": "zuhair",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ZuhairAhmed0/hostingflex/issues"
+  },
+  "homepage": "https://github.com/ZuhairAhmed0/hostingflex#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "ejs": "^3.1.7",
+    "express": "^4.18.0",
+    "joi": "^17.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.1",
+    "morgan": "^1.10.0",
+    "smws": "^1.0.2",
+    "validator": "^13.7.0"
+  },
+  "engines": {
+    "node": "17.9.0"
+  }
+}

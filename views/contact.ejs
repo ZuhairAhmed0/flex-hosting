@@ -1,0 +1,87 @@
+<%- include('./partials/header', {title: "Contact" }) %>
+    <header class="">
+        <%- include('./partials/navbar') %>
+            <%- include('./partials/hero-section', {pageTitle: "Contact"}) %>
+    </header>
+
+    <main class="contact">
+        <section class="choose-us center">
+            <div class="container">
+                <div class="d-flex">
+                    <figure  class="d-flex">
+                        <div class="icon">
+                            <i class="bx bx-phone-call"></i>
+                        </div>
+                        <figcaption>
+                            <h3>Phone</h3>
+                            <p>+24998933839</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="d-flex">
+                        <div class="icon">
+                            <i class="bx bx-mail-send"></i>
+                        </div>
+                        <figcaption>
+                            <h3>Email</h3>
+                            <p>info@hostingflex.com</p>
+                        </figcaption>
+                    </figure>
+                    <figure class="d-flex">
+                        <div class="icon"><i class="bx bx-location-plus"></i></div>
+                        <figcaption>
+                            <h3><Address>Address</Address></h3>
+                            <p>South Park Avenue,
+                                Melbourne Australia</p>
+                        </figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="center p-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="contact-form-inner margin-top-minus-200"><!-- contact form inner -->
+                            <div class="section-inner-title">
+                                <span class="subtitle">Find Us</span>
+                                <h2 class="title m-2">Contact With Us</h2>
+                            </div>
+                            <form action="/contact" id="get_in_touch" class="contact-form" method="post">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input type="text" class="form-control m-2 m-2" name="name" placeholder="Your Name" id="uname">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <input type="email" class="form-control m-2" name="email" placeholder="Your Email" id="email">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-12">
+                                        <div class="form-group">
+                                            <input type="url" class="form-control m-2" name="url" placeholder="Your Website" id="website">
+                                        </div>
+                                        <div class="form-group textarea">
+                                            <textarea id="message" class="form-control m-2" name="message" cols="30" rows="10" placeholder="Your Message"></textarea>
+                                        </div>
+                                        <div class="form-group">
+                                            <button class="btn btn-info btn-submit" type="submit">Send a Message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div><!-- //. contact form inner -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+        <script src="js/main.js"></script>
+        </body>
+
+
+        </html>

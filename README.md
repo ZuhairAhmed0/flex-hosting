@@ -1,1 +1,1 @@
-# flex-hosting
+# hostingflex

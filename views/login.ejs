@@ -1,0 +1,44 @@
+<%- include('./partials/header', {title: "login" }) %>
+    <header class="">
+        <%- include('./partials/navbar') %>
+            <%- include('./partials/hero-section', {pageTitle: "login" }) %>
+    </header>
+    <main class="login">
+        <section class="p-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="contact-form-inner margin-top-minus-200">
+                            <strong class="text-center d-block">Login</strong>
+                            <h2 class="title m-2 text-center">Account Login</h2>
+                            <form action="/login" id="get_in_touch" method="post" class="contact-form login-form">
+                                <div class="form-group m-3">
+                                    <label>Username or Email Address</label>
+                                    <input required type="text" name="usernameOrEmail" class="form-control p-3">
+                                    <div class="errors text-danger"></div>
+                                </div>
+                                <div class="form-group m-3">
+                                    <label>Password</label>
+                                    <input required type="password" name="password" class="form-control p-3">
+                                    <div class="errors text-danger"></div>
+                                </div>
+                                <div class="form-group m-3  text-center">
+                                    <button class="btn btn-submit"  type="submit">Login</button>
+                                </div>
+                                <div class="register-text text-center">
+                                    Not registered yet, <a href="/signup">sign up now</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <%- include('./partials/footer') %>
+        <script src="js/main.js"></script>
+        </body>
+
+
+        </html>
