@@ -2,14 +2,16 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require("morgan");
 const cookieParser = require("cookie-parser");
+const env = require('dotenv/config');
+
 const app = express();
 const port = process.env.PORT || 3000;
-const db_url = "mongodb://localhost:27017/hostingflex";
 
 // import Routes
 const pagesRoute = require("./routes/pagesRoutes");
 const authRoute = require("./routes/authRoues");
 const {checkUser} = require('./middlewares/authMiddlewares');
+
 // views engine
 app.set("view engine", "ejs");
 app.set("views");
@@ -25,7 +27,7 @@ app.use(cookieParser());
 
 // connection to database
 mongoose
-  .connect(db_url)
+  .connect(process.env.DB)
   .then(() => {
     app.listen(port, () => console.log(`server run on port ${port}`));
   })

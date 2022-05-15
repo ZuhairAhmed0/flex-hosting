@@ -43,6 +43,9 @@ myform?.addEventListener("submit", async (e) => {
     })
       .then((res) => res.json())
       .then((result) => {
+        if(result.user) {
+          location.assign('/login')
+        }
         handleErrors.forEach((error, i) => {
           setTimeout(() => {
             error.textContent = Object.values(result)[i];
@@ -54,6 +57,7 @@ myform?.addEventListener("submit", async (e) => {
     console.log(error);
   }
 });
+
 loginForm?.addEventListener("submit", async (e) => {
   const userInfo = {
     email: loginForm.usernameOrEmail.value,
@@ -70,10 +74,13 @@ loginForm?.addEventListener("submit", async (e) => {
       body: JSON.stringify(userInfo),
     })
       .then((res) => res.json())
-      .then(({ email, password }) => {
+      .then((result) => {
+        if(result.user) {
+          location.assign('/login')
+        }
         setTimeout(() => {
-          handleErrors[0].textContent = email;
-          handleErrors[1].textContent = password;
+          handleErrors[0].textContent = result.email;
+          handleErrors[1].textContent = result.password;
         }, 100);
       });
   } catch (error) {
@@ -81,37 +88,37 @@ loginForm?.addEventListener("submit", async (e) => {
   }
 });
 
-myform?.addEventListener("submit", async (e) => {
-  const userInfo = {
-    firstname: myform.firstname.value,
-    lastname: myform.lastname.value,
-    email: myform.email.value,
-    password: myform.password.value,
-    confirmPassword: myform.confirmPassword.value,
-  };
-  e.preventDefault();
-  handleErrors.forEach((error) => (error.textContent = ""));
-  try {
-    await fetch("/signup", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(userInfo),
-    })
-      .then((res) => res.json())
-      .then((result) => {
-        handleErrors.forEach((error, i) => {
-          setTimeout(() => {
-            error.textContent = Object.values(result)[i];
-            error.style = " transition: 1s";
-          }, 100);
-        });
-      });
-  } catch (error) {
-    console.log(error);
-  }
-});
+// myform?.addEventListener("submit", async (e) => {
+//   const userInfo = {
+//     firstname: myform.firstname.value,
+//     lastname: myform.lastname.value,
+//     email: myform.email.value,
+//     password: myform.password.value,
+//     confirmPassword: myform.confirmPassword.value,
+//   };
+//   e.preventDefault();
+//   handleErrors.forEach((error) => (error.textContent = ""));
+//   try {
+//     await fetch("/signup", {
+//       method: "post",
+//       headers: {
+//         "Content-Type": "application/json",
+//       },
+//       body: JSON.stringify(userInfo),
+//     })
+//       .then((res) => res.json())
+//       .then((result) => {
+//         handleErrors.forEach((error, i) => {
+//           setTimeout(() => {
+//             error.textContent = Object.values(result)[i];
+//             error.style = " transition: 1s";
+//           }, 100);
+//         });
+//       });
+//   } catch (error) {
+//     console.log(error);
+//   }
+// });
 
 checkDomain?.addEventListener("submit", async (e) => {
   const domainName = checkDomain.domainName.value.trim();
