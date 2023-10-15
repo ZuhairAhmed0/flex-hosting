@@ -26,6 +26,7 @@ app.use(cookieParser());
 
 
 // connection to database
+mongoose.set('strictQuery', false)
 mongoose
   .connect(process.env.DB)
   .then(() => {
